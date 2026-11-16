@@ -30,7 +30,9 @@ function sharePage(){ var u = location.href, t = document.title;
 FAB = """<div class="fab"><button id="fabTop" type="button" title="回到顶部" aria-label="回到顶部">↑</button><button id="fabBack" type="button" title="返回" aria-label="返回" onclick="history.back()">←</button></div>"""
 
 
-def head(title, desc, extra_css=""):
+def head(title, desc, extra_css="", path="/"):
+    og_url = DOMAIN + path
+    og_img = DOMAIN + "/assets/share-logo.png"
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -38,6 +40,21 @@ def head(title, desc, extra_css=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="冯氏族谱">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{og_url}">
+<meta property="og:image" content="{og_img}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="冯氏族谱「冯」字标志">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{og_img}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/style.css?v=shared-theme-1">
 {extra_css}<link rel="stylesheet" href="/assets/genealogy-theme.css?v={THEME_V}">
@@ -130,7 +147,7 @@ def book_page(b):
         rows += (f'<a href="/read/{b["slug"]}-{v["id"]}.html"><span>{v["name"]}</span>'
                  f'<span class="pg">{v["pages"]} 页 · 打开阅读 ›</span></a>\n')
     desc = f'{b["title"]}：{b["era"]}，{b["editors"]}。{b["source"]}，全 {len(b["volumes"])} 册 {book_total_pages(b)} 页，在线连读。'
-    return head(f'{b["title"]} · 冯氏族谱', desc) + header() + f"""<main>
+    return head(f'{b["title"]} · 冯氏族谱', desc, path=f'/book/{b["slug"]}.html') + header() + f"""<main>
 <p class="crumb"><a href="/">旧谱收藏</a> / {b["province"]} · {b["place"]}</p>
 <h1>{b["title"]}</h1>
 <div class="kv">
@@ -164,7 +181,8 @@ def reader_page(b, v):
             "pages": pages, "numeric": numeric, "start": 1}
     data_json = json.dumps(data, ensure_ascii=False)
     return head(f'{title} · 在线连读 · 冯氏族谱',
-                f'{title}在线连读：{b["era"]}，{b["source"]}。') + header() + f"""<div class="wrap">
+                f'{title}在线连读：{b["era"]}，{b["source"]}。',
+                path=f'/read/{b["slug"]}-{v["id"]}.html') + header() + f"""<div class="wrap">
 <div class="readerbar">
 <a class="nav" href="/book/{b["slug"]}.html">返回目录</a>
 <span class="info" id="info" aria-live="polite"></span>
