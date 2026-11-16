@@ -157,3 +157,5 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
 /* 与主站一致的分享按钮（自主站样式原样搬入：去按钮底色与边框，只留文字） */
 .share-wrap{display:inline-flex;position:relative}
 nav .share-text{font:inherit;color:#742f32;cursor:pointer;background:0 0;border:none;padding:0}
+/* 分享成功提示条（与主站同款式） */
+.share-toast{color:#fff;white-space:nowrap;z-index:20;background:#302f29;border-radius:6px;padding:4px 10px;font-size:13px;position:absolute;top:calc(100% + 8px);right:0;display:none}

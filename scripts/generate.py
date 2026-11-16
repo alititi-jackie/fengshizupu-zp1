@@ -24,10 +24,17 @@ ft.onclick = function(){ window.scrollTo({top: 0, behavior: 'smooth'}); };
 function sharePage(){ var u = location.href, t = document.title;
   var description = document.querySelector('meta[name="description"]').content;
   if (navigator.share) { navigator.share({title: t, text: description, url: u}).catch(function(){}); }
-  else if (navigator.clipboard) { navigator.clipboard.writeText(u).then(function(){ alert('链接已复制'); }); } }
+  else if (navigator.clipboard) { navigator.clipboard.writeText(u).then(function(){
+    var w = document.querySelector('.share-wrap'); if (!w) return;
+    var el = w.querySelector('.share-toast');
+    if (!el) { el = document.createElement('span'); el.className = 'share-toast'; el.textContent = '链接已复制'; w.appendChild(el); }
+    el.style.display = 'block'; setTimeout(function(){ el.style.display = 'none'; }, 1600);
+  }); } }
 </script>"""
 
-FAB = """<div class="fab"><button id="fabTop" type="button" title="回到顶部" aria-label="回到顶部">↑</button><button id="fabBack" type="button" title="返回" aria-label="返回" onclick="history.back()">←</button></div>"""
+SVG_BACK = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>'
+SVG_TOP = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg>'
+FAB = """<div class="fab"><button id="fabTop" type="button" title="回到顶部" aria-label="回到顶部">""" + SVG_TOP + """</button><button id="fabBack" type="button" title="返回" aria-label="返回" onclick="history.back()">""" + SVG_BACK + """</button></div>"""
 
 
 def head(title, desc, extra_css="", path="/"):
@@ -55,7 +62,7 @@ def head(title, desc, extra_css="", path="/"):
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{og_img}">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/icon.svg">
 <link rel="stylesheet" href="/assets/style.css?v=shared-theme-1">
 {extra_css}<link rel="stylesheet" href="/assets/genealogy-theme.css?v={THEME_V}">
 </head>
