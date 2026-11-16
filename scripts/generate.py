@@ -160,7 +160,7 @@ def book_page(b):
 <section class="block"><h2>各册阅读</h2>
 <div class="list">
 {rows}</div></section>
-<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册阅读页顶部可下载 PDF 版。原书水印为藏本馆印记，予以保留。</p>
+<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册阅读页顶部可下载 PDF 版。</p>
 </main>
 {FAB}
 """ + FAB_SCRIPT + footer()
