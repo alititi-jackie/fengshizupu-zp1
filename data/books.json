@@ -116,6 +116,47 @@
           "dl_mb": 15.3
         }
       ]
+    },
+    {
+      "slug": "daizhou-feng",
+      "title": "山西代州冯氏族谱",
+      "province": "山西",
+      "place": "代州（今代县）",
+      "era": "民国二十三年（1934）刊",
+      "editors": "冯子和等编",
+      "source": "南京图书馆藏本 · 维基共享资源（公有领域）",
+      "keywords": "山西 代州 代县 道后 冯氏族谱 民国 姚鼐 世谱",
+      "intro": "山西代州（今代县）冯氏族谱，冯子和等编，民国二十三年（1934）三月刊印，全书四卷四册。卷一收凡例、新旧序文（旧序含姚鼐《代州道后冯氏世谱序》）、世系图与世谱表。本站收录南京图书馆藏本影印，逐页在线连读。",
+      "volumes": [
+        {
+          "id": "vol1",
+          "name": "第一册",
+          "pages": 363,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/NJlib-2004997-0001_%E4%BB%A3%E5%B7%9E%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C%E5%9B%9B%E5%8D%B7.pdf",
+          "dl_mb": 39.3
+        },
+        {
+          "id": "vol2",
+          "name": "第二册",
+          "pages": 351,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/NJlib-2004997-0002_%E4%BB%A3%E5%B7%9E%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C%E5%9B%9B%E5%8D%B7.pdf",
+          "dl_mb": 59.4
+        },
+        {
+          "id": "vol3",
+          "name": "第三册",
+          "pages": 353,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/NJlib-2004997-0003_%E4%BB%A3%E5%B7%9E%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C%E5%9B%9B%E5%8D%B7.pdf",
+          "dl_mb": 60.7
+        },
+        {
+          "id": "vol4",
+          "name": "第四册",
+          "pages": 250,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/NJlib-2004997-0004_%E4%BB%A3%E5%B7%9E%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C%E5%9B%9B%E5%8D%B7.pdf",
+          "dl_mb": 23.1
+        }
+      ]
     }
   ]
 }
