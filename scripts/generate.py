@@ -117,11 +117,18 @@ def index_page(books):
 """ + FAB_SCRIPT + footer()
 
 
+DL_BASE = "https://github.com/alititi-jackie/fengshizupu-zp1/releases/download/b-20261116"
+
+
 def book_page(b):
     rows = ""
     for v in b["volumes"]:
-        rows += (f'<a href="/read/{b["slug"]}-{v["id"]}.html"><span>{v["name"]}</span>'
-                 f'<span class="pg">{v["pages"]} 页 · 打开阅读 ›</span></a>\n')
+        dl = ""
+        if v.get("dl_mb"):
+            dl = (f'<a class="vr-dl" href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
+                  f'下载 PDF · {v["dl_mb"]} MB</a>')
+        rows += (f'<div class="volrow"><a class="vr-read" href="/read/{b["slug"]}-{v["id"]}.html">'
+                 f'{v["name"]}<span class="pg">{v["pages"]} 页 · 在线阅读 ›</span></a>{dl}</div>\n')
     desc = f'{b["title"]}：{b["era"]}，{b["editors"]}。{b["source"]}，全 {len(b["volumes"])} 册 {book_total_pages(b)} 页，在线连读。'
     return head(f'{b["title"]} · 冯氏族谱', desc) + header() + f"""<main>
 <p class="crumb"><a href="/">旧谱收藏</a> / {b["province"]} · {b["place"]}</p>
@@ -134,9 +141,9 @@ def book_page(b):
 </div>
 <p>{b["intro"]}</p>
 <section class="block"><h2>各册阅读</h2>
-<div class="list">
+<div>
 {rows}</div></section>
-<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；原书水印为藏本馆印记，予以保留。</p>
+<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册另提供 PDF 下载，每页均印有「冯氏族谱 · fengshizupu.com」页眉，可存档、打印。原书水印为藏本馆印记，予以保留。</p>
 </main>
 {FAB}
 """ + FAB_SCRIPT + footer()

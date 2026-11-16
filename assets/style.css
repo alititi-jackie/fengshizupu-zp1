@@ -215,3 +215,10 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
 @media (max-width:650px) {
 .site-theme .regional-search+h1 { margin-top:18px }
 }
+
+/* --- 书页：每册一行（在线阅读 + PDF 下载） --- */
+.volrow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-top:8px}
+.volrow:hover{border-color:var(--red)}
+.volrow .vr-read{color:var(--ink);text-decoration:none}
+.volrow .vr-read .pg{color:var(--red);white-space:nowrap;margin-left:10px}
+.volrow .vr-dl{color:var(--red);white-space:nowrap;text-decoration:none;font-weight:600}

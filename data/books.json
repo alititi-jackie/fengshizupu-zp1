@@ -1,53 +1,59 @@
 {
- "books": [
-  {
-   "editors": "林福和、陈亦乐 纂辑",
-   "era": "公元一九九三年（癸酉）重修",
-   "intro": "浙江省乐清市小荊冯氏宗谱，公元一九九三年（癸酉）重修，全书三册六卷，书中并收民国十一年原序。本站收录温州图书馆藏本影印，逐页在线连读；原书水印为藏本馆印记，予以保留，每页左上方加本站页眉。",
-   "keywords": "浙江 乐清 小荊 冯氏宗谱 1993 重修 温州图书馆",
-   "place": "乐清市小荊",
-   "province": "浙江",
-   "slug": "yueqing-xiaojing-feng",
-   "source": "温州图书馆藏本 · 维基共享资源（公有领域）",
-   "title": "浙江乐清小荊冯氏宗谱",
-   "volumes": [
+  "books": [
     {
-     "id": "vol1a",
-     "name": "第一册上",
-     "pages": 139,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/WZLib-DB-218859_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%80%E5%86%8A%E4%B8%8A%EF%BC%89.pdf"
-    },
-    {
-     "id": "vol1b",
-     "name": "第一册下",
-     "pages": 139,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/WZLib-DB-218858_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%80%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-    },
-    {
-     "id": "vol2a",
-     "name": "第二册上",
-     "pages": 156,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/WZLib-DB-218857_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%86%8A%E4%B8%8A%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-    },
-    {
-     "id": "vol2b",
-     "name": "第二册下",
-     "pages": 156,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/WZLib-DB-218856_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-    },
-    {
-     "id": "vol3a",
-     "name": "第三册上",
-     "pages": 152,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/WZLib-DB-218855_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%89%E5%86%8A%E4%B8%8A%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-    },
-    {
-     "id": "vol3b",
-     "name": "第三册下",
-     "pages": 152,
-     "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/WZLib-DB-218854_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%89%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "editors": "林福和、陈亦乐 纂辑",
+      "era": "公元一九九三年（癸酉）重修",
+      "intro": "浙江省乐清市小荊冯氏宗谱，公元一九九三年（癸酉）重修，全书三册六卷，书中并收民国十一年原序。本站收录温州图书馆藏本影印，逐页在线连读；原书水印为藏本馆印记，予以保留，每页左上方加本站页眉。",
+      "keywords": "浙江 乐清 小荊 冯氏宗谱 1993 重修 温州图书馆",
+      "place": "乐清市小荊",
+      "province": "浙江",
+      "slug": "yueqing-xiaojing-feng",
+      "source": "温州图书馆藏本 · 维基共享资源（公有领域）",
+      "title": "浙江乐清小荊冯氏宗谱",
+      "volumes": [
+        {
+          "id": "vol1a",
+          "name": "第一册上",
+          "pages": 139,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/WZLib-DB-218859_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%80%E5%86%8A%E4%B8%8A%EF%BC%89.pdf",
+          "dl_mb": 38.9
+        },
+        {
+          "id": "vol1b",
+          "name": "第一册下",
+          "pages": 139,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/WZLib-DB-218858_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%80%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "dl_mb": 35.2
+        },
+        {
+          "id": "vol2a",
+          "name": "第二册上",
+          "pages": 156,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/WZLib-DB-218857_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%86%8A%E4%B8%8A%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "dl_mb": 39.8
+        },
+        {
+          "id": "vol2b",
+          "name": "第二册下",
+          "pages": 156,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/WZLib-DB-218856_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "dl_mb": 35.6
+        },
+        {
+          "id": "vol3a",
+          "name": "第三册上",
+          "pages": 152,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/WZLib-DB-218855_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%89%E5%86%8A%E4%B8%8A%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "dl_mb": 36.5
+        },
+        {
+          "id": "vol3b",
+          "name": "第三册下",
+          "pages": 152,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/WZLib-DB-218854_%E6%B5%99%E6%B1%9F%E6%A8%82%E6%B8%85%E5%B0%8F%E8%8D%8A%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C%EF%BC%88%E7%AC%AC%E4%B8%89%E5%86%8A%E4%B8%8B%EF%BC%89.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "dl_mb": 37.1
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
