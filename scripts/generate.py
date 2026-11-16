@@ -30,7 +30,7 @@ function sharePage(){ var u = location.href, t = document.title;
 FAB = """<div class="fab"><button id="fabTop" type="button" title="回到顶部" aria-label="回到顶部">↑</button><button id="fabBack" type="button" title="返回" aria-label="返回" onclick="history.back()">←</button></div>"""
 
 
-def head(title, desc):
+def head(title, desc, extra_css=""):
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -40,7 +40,7 @@ def head(title, desc):
 <meta name="description" content="{desc}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/style.css?v=shared-theme-1">
-<link rel="stylesheet" href="/assets/genealogy-theme.css?v={THEME_V}">
+{extra_css}<link rel="stylesheet" href="/assets/genealogy-theme.css?v={THEME_V}">
 </head>
 <body class="site-theme">
 """
@@ -88,21 +88,25 @@ def book_total_pages(book):
 
 
 def index_page(books):
-    by_prov = {}
+    # 首页照抄主站主页：结构与样式与 fengshizupu.com 主页一致（样式 = assets/main-home.css，
+    # 即主站主页同款样式文件的快照；主站改版后需同步更新）。差别只有两处：
+    # ① 搜索搜本站收录的谱书；② 搜索下方每部谱一张卡片（与主站恩平卡同款式）。
+    cards = ""
     for b in books:
-        by_prov.setdefault(b["province"], []).append(b)
-    sections = ""
-    for prov, items in by_prov.items():
-        rows = ""
-        for b in items:
-            meta = f'{b["era"]} · {len(b["volumes"])} 册 · {book_total_pages(b)} 页'
-            q = f'{b["title"]} {b["keywords"]}'
-            rows += f'<a href="/book/{b["slug"]}.html" data-q="{q}"><span>{b["title"]}</span><span class="pg">{meta}</span></a>\n'
-        sections += f'<section class="block"><h2>{prov}</h2>\n<div class="list">\n{rows}</div></section>\n'
+        q = f'{b["title"]} {b["keywords"]}'
+        intro = f'{b["place"]} · {len(b["volumes"])} 册 · {book_total_pages(b)} 页，逐页在线连读'
+        cards += (f'<a class="enping-card" href="/book/{b["slug"]}.html" data-q="{q}">'
+                  f'<span class="enping-seal">冯</span><span class="enping-body">'
+                  f'<span class="enping-title">《{b["title"]}》</span>'
+                  f'<span class="enping-motto">{b["era"]}</span>'
+                  f'<span class="enping-intro">{intro}<span class="enping-more">　在线阅读 ›</span></span></span>'
+                  f'<span class="enping-btn">看全书</span></a>\n')
+    sections = f'<div class="book-cards">\n{cards}</div>\n'
     total_books = len(books)
     total_pages = sum(book_total_pages(b) for b in books)
     return head("各地冯氏旧谱收藏 · 冯氏族谱",
-                "各地冯氏旧谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。") + header("home") + f"""<main>
+                "各地冯氏旧谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。",
+                '<link rel="stylesheet" href="/assets/main-home.css?v=20261116">\n') + header("home") + f"""<main>
 <section class="hero"><p class="eyebrow">全国冯氏宗亲 · 数字族谱档案</p>
 <h1>寻根有据，世系有源。</h1>
 <p>从一页家谱，读懂一家人的来处。留存珍贵原谱，让宗亲记忆代代相传。</p>
@@ -113,7 +117,7 @@ def index_page(books):
 </main>
 {FAB}
 <script src="/assets/site.js?v=2"></script>
-<script>filterList('bookSearch', 'bookStatus', '.list a', '部');</script>
+<script>filterList('bookSearch', 'bookStatus', '.book-cards .enping-card', '部');</script>
 """ + FAB_SCRIPT + footer()
 
 
@@ -123,12 +127,8 @@ DL_BASE = "https://github.com/alititi-jackie/fengshizupu-zp1/releases/download/b
 def book_page(b):
     rows = ""
     for v in b["volumes"]:
-        dl = ""
-        if v.get("dl_mb"):
-            dl = (f'<a class="vr-dl" href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
-                  f'下载 PDF · {v["dl_mb"]} MB</a>')
-        rows += (f'<div class="volrow"><a class="vr-read" href="/read/{b["slug"]}-{v["id"]}.html">'
-                 f'{v["name"]}<span class="pg">{v["pages"]} 页 · 在线阅读 ›</span></a>{dl}</div>\n')
+        rows += (f'<a href="/read/{b["slug"]}-{v["id"]}.html"><span>{v["name"]}</span>'
+                 f'<span class="pg">{v["pages"]} 页 · 打开阅读 ›</span></a>\n')
     desc = f'{b["title"]}：{b["era"]}，{b["editors"]}。{b["source"]}，全 {len(b["volumes"])} 册 {book_total_pages(b)} 页，在线连读。'
     return head(f'{b["title"]} · 冯氏族谱', desc) + header() + f"""<main>
 <p class="crumb"><a href="/">旧谱收藏</a> / {b["province"]} · {b["place"]}</p>
@@ -141,12 +141,19 @@ def book_page(b):
 </div>
 <p>{b["intro"]}</p>
 <section class="block"><h2>各册阅读</h2>
-<div>
+<div class="list">
 {rows}</div></section>
-<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册另提供 PDF 下载，每页均印有「冯氏族谱 · fengshizupu.com」页眉，可存档、打印。原书水印为藏本馆印记，予以保留。</p>
+<p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册阅读页顶部可下载带页眉的 PDF 版。原书水印为藏本馆印记，予以保留。</p>
 </main>
 {FAB}
 """ + FAB_SCRIPT + footer()
+
+
+def dl_strip(b, v):
+    if not v.get("dl_mb"):
+        return ""
+    return (f'<p class="dlstrip"><a href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
+            f'下载本册 PDF（每页带「冯氏族谱 · fengshizupu.com」页眉）· {v["dl_mb"]} MB</a></p>\n')
 
 
 def reader_page(b, v):
@@ -168,7 +175,7 @@ def reader_page(b, v):
 <label class="info jumpctl">页码 <input id="jump" type="number" min="1" max="{v['pages']}"></label>
 <button class="primary" id="jumpBtn">跳页</button>
 </div>
-<div class="readerwrap">
+{dl_strip(b, v)}<div class="readerwrap">
 <button id="singlePage" class="reader-image" type="button" aria-label="放大当前谱页"><img class="pageimg" id="pg" alt="族谱原书页"></button>
 <div id="scrollView" style="display:none"></div>
 <div class="pagenav"><a id="prev" href="#">← 上一页</a><a id="next" href="#">下一页 →</a></div>
