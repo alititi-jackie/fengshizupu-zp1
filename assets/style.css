@@ -154,3 +154,6 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
 .dlrow{max-width:1160px;margin:0 auto;text-align:left;padding:8px 12px 0}
 .dlrow a{color:var(--red);text-decoration:none;font-size:14px}
 .dlrow a:hover{text-decoration:underline}
+/* 与主站一致的分享按钮（自主站样式原样搬入：去按钮底色与边框，只留文字） */
+.share-wrap{display:inline-flex;position:relative}
+nav .share-text{font:inherit;color:#742f32;cursor:pointer;background:0 0;border:none;padding:0}
