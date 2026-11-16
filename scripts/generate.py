@@ -46,9 +46,32 @@ def head(title, desc):
 """
 
 
-def header():
+def header(active="archives"):
+    on_home = ' class="on" aria-current="page"' if active == "home" else ""
+    on_arch = ' class="on" aria-current="page"' if active == "archives" else ""
     return f"""<header class="site-header"><a class="brand" href="/"><img src="/icon.svg" alt="" width="46" height="46"><span>冯氏族谱<small>zp1.fengshizupu.com</small></span></a></header>
-<nav class="mainnav" aria-label="主导航"><div class="mainnav-in"><a href="{MAIN}/">首页</a><a href="{MAIN}/news/">资讯</a><a href="{MAIN}/archives/" class="on" aria-current="page">族谱</a><a href="{MAIN}/about/">关于</a><span class="share-wrap"><button type="button" class="share-text" onclick="sharePage()">分享</button></span></div></nav>
+<nav class="mainnav" aria-label="主导航"><div class="mainnav-in"><a href="{MAIN}/"{on_home}>首页</a><a href="{MAIN}/news/">资讯</a><a href="{MAIN}/archives/"{on_arch}>族谱</a><a href="{MAIN}/about/">关于</a><span class="share-wrap"><button type="button" class="share-text" onclick="sharePage()">分享</button></span></div></nav>
+"""
+
+
+# 主站主页搜索框下方的栏目（2026-11-16 自 fengshizupu.com 主页原样复制，站内链接改为绝对地址；
+# 主站日后更新这些栏目时，这里要跟着同步一次）
+MAIN_SECTIONS = """
+<section class="home-news"><div class="home-news-head"><h2>冯氏资讯</h2><a href="https://fengshizupu.com/news/">全部资讯 ›</a></div>
+<p class="home-news-item"><span class="badge">人物</span> <a href="https://fengshizupu.com/news/enping/feng-ru-enping-aviation/">从恩平杏圃村到美国奥克兰：冯如的航空生涯</a> <small>2026 年 11 月 15 日</small></p>
+<p class="home-news-item"><span class="badge">指南</span> <a href="https://fengshizupu.com/news/enping/enping-feng-juanshou-guide/">第一次翻《恩平冯氏族谱》卷首，先看哪几页？</a> <small>2026 年 11 月 15 日</small></p></section>
+<a class="enping-card" href="https://enping.fengshizupu.com" target="_blank" rel="noopener noreferrer"><span class="enping-seal">冯</span><span class="enping-body"><span class="enping-title">《恩平冯氏族谱》全书在线查阅</span><span class="enping-motto">寻根溯源 · 世系传承</span><span class="enping-intro">恩平冯氏总谱全书 1,269 页逐页看图，可按房支、村庄查找<span class="enping-more">　去看全书 ›</span></span></span><span class="enping-btn">看全书</span></a>
+<article><h2>各地族谱</h2><p>从各地族谱入口查阅原书、续修谱和世系资料。</p><a href="https://fengshizupu.com/archives/">进入族谱目录 →</a></article>
+<section><h2>冯氏宗亲网站</h2><ul>
+<li><a href="http://www.feng0762.com/" target="_blank" rel="noopener noreferrer">冯氏宗亲网</a> — 冯氏宗亲论坛，各地宗亲会与寻根交流</li>
+<li><a href="https://www.lulugu.com/feng" target="_blank" rel="noopener noreferrer">中华家谱网 · 冯氏族谱</a> — 各地冯氏家谱条目与谱书预览</li>
+<li><a href="https://www.jiapu.tv/x/54/" target="_blank" rel="noopener noreferrer">中国家谱网 · 冯氏家谱</a> — 按《中国家谱总目》著录的冯氏家谱目录</li>
+<li><a href="http://jp5000.com/fengb" target="_blank" rel="noopener noreferrer">百姓通谱网 · 冯氏家谱网</a> — 冯氏宗祠、字辈与姓氏文化</li>
+<li><a href="https://wiki.zupulu.com/doc.php?action=view&amp;docid=1621" target="_blank" rel="noopener noreferrer">族谱录 · 冯姓</a> — 冯姓起源、郡望与堂号</li>
+<li><a href="https://www.library.sh.cn/special/GenealogyLibrary/" target="_blank" rel="noopener noreferrer">上海图书馆家谱馆</a> — 家谱馆藏检索与寻根服务</li>
+<li><a href="https://www.mychinaroots.com/surnames/detail?word=%E5%86%AF" target="_blank" rel="noopener noreferrer">My China Roots · 冯</a> — 英文寻根平台的冯姓页（海外宗亲）</li>
+</ul></section>
+<a class="enping-card" href="https://fengshizupu.com/enping-fengshi-juanshou/"><span class="enping-seal">冯</span><span class="enping-body"><span class="enping-title">《恩平冯氏族谱 · 卷首影印》</span><span class="enping-motto">始平世泽 · 大树家声</span><span class="enping-intro">恩平冯氏总谱卷首影印：谱序、倡修经过与修谱合影<span class="enping-more">　在线阅览 ›</span></span></span><span class="enping-btn">在线阅览</span></a>
 """
 
 
@@ -79,16 +102,14 @@ def index_page(books):
     total_books = len(books)
     total_pages = sum(book_total_pages(b) for b in books)
     return head("各地冯氏旧谱收藏 · 冯氏族谱",
-                "各地冯氏旧谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。") + header() + f"""<main>
+                "各地冯氏旧谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。") + header("home") + f"""<main>
 <section class="hero"><p class="eyebrow">全国冯氏宗亲 · 数字族谱档案</p>
-<h1>各地冯氏旧谱收藏</h1>
-<p>收录各地图书馆藏本冯氏宗谱影印（公有领域），逐页在线连读。目前收录 {total_books} 部、{total_pages} 页，陆续增补。</p>
-<div class="searchbox"><input id="bookSearch" type="text" placeholder="输入地名或书名，如：乐清、湘潭、宗谱" aria-label="搜索收藏的族谱"><button type="button" onclick="document.getElementById('bookSearch').focus()">搜索</button></div>
+<h1>寻根有据，世系有源。</h1>
+<p>从一页家谱，读懂一家人的来处。留存珍贵原谱，让宗亲记忆代代相传。</p>
+<div class="regional-search"><form class="hero-search" onsubmit="return false"><input id="bookSearch" type="text" placeholder="输入地名或书名，如：乐清、湘潭、宗谱" aria-label="搜索本站收录的谱书"><button type="submit">搜索</button></form><small>输入地名或书名，筛选本站收录的谱书（目前收录 {total_books} 部、{total_pages} 页，陆续增补）。</small></div>
 <p class="note" id="bookStatus"></p>
 </section>
-{sections}<section class="block"><h2>收藏说明</h2>
-<p class="note">本站只收录公有领域的图书馆藏本影印，每部均注明藏本来源与纂修年代；原书上的藏本馆水印予以保留，每页左上方加「冯氏族谱 · fengshizupu.com」页眉。族谱按省份列于本页，点开任意一部即可逐册连读。</p>
-</section>
+{sections}""" + MAIN_SECTIONS + f"""
 </main>
 {FAB}
 <script src="/assets/site.js?v=2"></script>
