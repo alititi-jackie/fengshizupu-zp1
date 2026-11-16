@@ -9,56 +9,35 @@ body{margin:0;background:var(--cream);color:var(--ink);
 a{color:var(--red);text-decoration:none}
 a:active{opacity:.7}
 .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
-.brandbar{padding:24px 0 14px}
-.brandbar .brand{display:flex;gap:13px;align-items:center;text-decoration:none;color:var(--red)}
-.brandbar .brand img{width:46px;height:46px;border-radius:10px;display:block}
-.brandbar .brand span{font-size:22px;font-weight:700;letter-spacing:.04em;line-height:1.3}
-.brandbar .brand small{display:block;font-size:12.5px;font-weight:400;color:var(--muted);letter-spacing:1px}
 .mainnav{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
 .mainnav-in{display:flex;gap:26px;align-items:center;height:48px;overflow-x:auto;scrollbar-width:none}
 .mainnav-in::-webkit-scrollbar{display:none}
 .mainnav a{color:var(--ink);text-decoration:none;white-space:nowrap;padding:4px 1px}
 .mainnav a.on{color:var(--red);font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
 .mainnav button.share{background:none;border:0;font:inherit;color:var(--red);cursor:pointer;padding:4px 1px;white-space:nowrap}
-@media(max-width:650px){.brandbar{padding:16px 0 10px}.mainnav-in{gap:19px;height:44px;font-size:15.5px}}
+@media(max-width:650px){.mainnav-in{gap:19px;height:44px;font-size:15.5px}}
 .hero{padding-top:54px}
-.hero-heading{text-align:left;color:#302f29;font:18px/1.7 system-ui,sans-serif}
-.hero-intro{margin:0 0 16px}
-.hero-eyebrow{margin:0;font:18px/1.7 system-ui,sans-serif;color:#742f32;letter-spacing:3px}
 .hero h1{font-family:Georgia,'Songti SC',serif;font-size:min(44px,calc((100vw - 32px) / 10.5));
   white-space:nowrap;line-height:1.3;margin:12px 0 16px}
 @media(max-width:650px){.hero{padding-top:34px}}
-.searchbox{margin:20px auto 6px;max-width:1160px;display:flex;gap:8px}
-.searchbox input{flex:1;padding:12px 14px;font-size:16px;border:1.5px solid var(--red);
-  border-radius:10px;background:#fff;font-family:inherit;min-width:0}
-.searchbox button{padding:12px 20px;font-size:16px;border:0;border-radius:10px;
-  background:var(--red);color:#fff;font-family:inherit;cursor:pointer}
 #searchResults{max-width:1160px;margin:6px auto 0;text-align:left}
 #searchResults a{display:flex;justify-content:space-between;gap:10px;align-items:baseline;
   background:#fff;border:1px solid var(--line);
   border-radius:8px;padding:9px 12px;margin-top:6px;color:var(--ink);font-size:15px}
 #searchResults a .pg{color:var(--red);white-space:nowrap;flex-shrink:0}
-.hero .searchbox{margin-top:16px}
-.home-quick-links{display:flex;justify-content:flex-start;flex-wrap:wrap;column-gap:16px;margin-top:6px}
-.home-quick-links a{display:inline-flex;align-items:center;min-height:44px;
-  text-decoration:underline;text-underline-offset:.2em}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
 @media(min-width:640px){.cards{grid-template-columns:1fr 1fr 1fr}}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;
   padding:18px 14px;text-align:center;color:var(--ink)}
-.card .big{font-size:19px;font-weight:700;color:var(--red)}
 .card .small{font-size:13px;color:var(--muted);margin-top:2px}
 section.block{margin:26px 0}
 section.block h2{font-size:20px;color:var(--red);border-left:4px solid var(--red);
   padding-left:10px;margin:0 0 10px}
-.btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
 .btn{display:inline-block;background:var(--red);color:#fff;padding:11px 22px;
   border-radius:10px;font-size:16px}
-.btn.ghost{background:#fff;color:var(--red);border:1.5px solid var(--red)}
 .list a{display:flex;justify-content:space-between;gap:10px;background:var(--paper);
   border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-top:8px;color:var(--ink)}
 .list a .pg{color:var(--red);white-space:nowrap}
-.list .grp{margin:18px 0 4px;font-weight:700;color:var(--red)}
 footer.site{border-top:1px solid var(--line);margin-top:36px;padding:18px 16px 30px;
   text-align:center;color:var(--muted);font-size:13px}
 /* reader */
@@ -84,29 +63,12 @@ footer.site{border-top:1px solid var(--line);margin-top:36px;padding:18px 16px 3
 .kv .k{color:var(--muted);font-size:13px;margin-right:8px}
 /* floating buttons, toc & villages fixes, footer main-site link (2026-11-14) */
 footer.site a{color:var(--red);text-decoration:none;white-space:nowrap}
-.about-content{max-width:760px;margin-inline:auto}
-section.about-content h2{margin-top:1.5rem}
-.about-content li+li{margin-top:.4rem}
-.about-content a{text-decoration:underline;text-underline-offset:.15em}
 .fab{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:60}
 .fab button{width:44px;height:44px;border-radius:50%;border:1px solid #d8cfc0;
   background:rgba(255,255,255,.94);color:var(--red);font-size:19px;line-height:1;
   box-shadow:0 2px 8px rgba(60,40,20,.18);cursor:pointer;font-family:inherit}
 #fabTop{display:none}
 #fabTop.on{display:block}
-.list a.grp{font-weight:700;color:var(--red);background:none;border:0;border-radius:0;
-  padding:2px;margin:18px 0 4px}
-.note-row{padding:8px 2px;color:#97866c;font-size:14px;border-bottom:1px dashed #e7dfcf}
-.list a.note-link{background:transparent;border:0;border-bottom:1px dashed #e7dfcf;border-radius:0;
-  padding:8px 2px;margin-top:0;color:#97866c;font-size:14px}
-.list a.note-link .pg{color:var(--red);opacity:.7}
-.vsearch{margin:14px 0 4px}
-.vsearch input{width:100%;padding:11px 14px;font-size:16px;border:1.5px solid var(--red);
-  border-radius:10px;background:#fff;font-family:inherit}
-.vcount{font-size:13px;color:var(--muted);margin-top:6px;min-height:18px}
-.list a.fresh{display:inline-block;background:var(--red);color:#fff;border:0;border-radius:999px;
-  padding:1px 10px;font-size:12.5px;font-weight:400;margin:0 0 0 6px;vertical-align:2px}
-.vsec .grp{scroll-margin-top:64px}
 /* dual-mode reader: single page / continuous scroll (2026-11-14) */
 .pageimg{aspect-ratio:1397/1984}
 .modes{display:inline-flex;border:1px solid var(--red);border-radius:8px;overflow:hidden;flex-shrink:0}
@@ -125,7 +87,6 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
   body.jumpon #jumpBtn{display:block}}
 
 .crumb{margin:16px 0;color:#665c54}
-.searchbox input{min-width:0}
 .reader-image{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
 .image-dialog{width:96vw;max-width:1600px;height:92dvh;max-height:92dvh;padding:0;border:1px solid #ded6c6;border-radius:10px;background:#f7f4ec;color:#302f29}
 .image-dialog::backdrop{background:rgba(0,0,0,.8)}
@@ -136,38 +97,10 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
 .image-viewport img{display:block;max-width:100%;max-height:100%;height:auto;width:auto;margin:auto}
 .image-viewport img.zoomed{max-width:none;max-height:none;width:1509px;height:auto;margin:0 auto}
 
-.edition-crumb { margin: 1rem 0; }
-.edition-links { display: flex; flex-wrap: wrap; gap: .65rem 1rem; align-items: center; }
-.edition-catalog img { display: block; width: 100%; height: auto; margin-bottom: .55rem; }
-.edition figure { margin: 1.25rem 0; }
-.edition figcaption { margin-bottom: .5rem; }
-.edition-image { width: 100%; }
-.edition-tree { padding-left: 1rem; border-left: 1px solid #dbcac4; }
-.edition-tree details { padding: .25rem 0; }
-.edition-tree summary { cursor: pointer; overflow-wrap: anywhere; }
-.edition-tree p { margin: .25rem 0; }
-#searchResults a.edition-result .pg, .edition .list a .pg { white-space: normal; }
-#searchResults a.edition-result .pg { flex-shrink: 1; text-align: right; }
-.edition-inline-people a:not([style]) { display: none; }
-
 .reader-spacer{flex:1}
-.edition-readerbar .nav,.edition-readerbar button,.edition-readerbar .info{white-space:nowrap}
-#editionBook figure{scroll-margin-top:calc(48px + 60px)}
-#editionBook .pageimg{aspect-ratio:auto 1241/1754}
-.edition .pagenav button{flex:1;padding:10px;border:1px solid var(--red);border-radius:8px;
-  background:var(--red);color:#fff;font:inherit;cursor:pointer}
-.edition .pagenav button:disabled{opacity:.45;cursor:default}
-.edition-sheet-nav{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:12px}
-.edition-sheet-nav a{text-decoration:underline;text-underline-offset:.2em}
 #sheets{scroll-margin-top:60px}
 @media(max-width:650px){
-  .edition-readerbar{column-gap:4px;padding:6px 4px}
-  body:not(.jumpon) .edition-readerbar{flex-wrap:nowrap}
-  .edition-readerbar button,.edition-readerbar a.nav{font-size:13px;padding:7px 5px}
-  .edition-readerbar .modes button{padding:7px 5px}
-  .edition-readerbar .info{font-size:12px}
-  #editionBook figure{scroll-margin-top:calc(44px + 48px)}
-}
+  }
 
 /* --- 主站主页同款栏目样式（自 fengshizupu.com 主页 CSS 复制，2026-11-16；与主站保持一致） --- */
 .hero { padding:26px 0 }

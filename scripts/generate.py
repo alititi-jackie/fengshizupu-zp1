@@ -166,7 +166,7 @@ def book_page(b):
 """ + FAB_SCRIPT + footer()
 
 
-def dl_strip(b, v):
+def dl_row(b, v):
     if not v.get("dl_mb"):
         return ""
     return (f'<div class="dlrow"><a href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
@@ -193,7 +193,7 @@ def reader_page(b, v):
 <label class="info jumpctl">页码 <input id="jump" type="number" min="1" max="{v['pages']}"></label>
 <button class="primary" id="jumpBtn">跳页</button>
 </div>
-{dl_strip(b, v)}<div class="readerwrap">
+{dl_row(b, v)}<div class="readerwrap">
 <button id="singlePage" class="reader-image" type="button" aria-label="放大当前谱页"><img class="pageimg" id="pg" alt="族谱原书页"></button>
 <div id="scrollView" style="display:none"></div>
 <div class="pagenav"><a id="prev" href="#">← 上一页</a><a id="next" href="#">下一页 →</a></div>

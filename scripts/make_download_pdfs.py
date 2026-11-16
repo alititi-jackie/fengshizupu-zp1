@@ -18,44 +18,14 @@ import os
 import sys
 
 import fitz  # PyMuPDF
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 
-STAMP_TEXT = "冯氏族谱 · fengshizupu.com"
-RED = (116, 47, 50)
-CREAM = (255, 244, 223)
-
-FONT_CANDIDATES = [
-    os.environ.get("STAMP_FONT", ""),
-    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc",
-    "/usr/share/fonts/truetype/noto/NotoSerifCJK-Bold.ttc",
-    os.path.expanduser("~/workspace/fengshizupu-work/book/fonts/NotoSerifSC-700.ttf"),
-]
-
-
-def load_font(size):
-    for path in FONT_CANDIDATES:
-        if path and os.path.exists(path):
-            try:
-                return ImageFont.truetype(path, size)
-            except Exception:
-                continue
-    return ImageFont.load_default()
-
-
-def stamp(img):
-    w, h = img.size
-    size = max(18, int(w * 0.026))
-    font = load_font(size)
-    strip = img.crop((0, 0, int(w * 0.62), int(h * 0.055))).convert("L")
-    px = list(strip.getdata())
-    mean = sum(px) / max(1, len(px))
-    color = CREAM if mean < 110 else RED
-    d = ImageDraw.Draw(img)
-    d.text((int(w * 0.024), int(h * 0.011)), STAMP_TEXT, font=font, fill=color)
-    return img
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from render_pages import stamp  # 页眉样式以 render_pages 为唯一出处，两边不要各改各的
 
 
 def page_image(doc, page):
+    # 下载版取每页最大的内嵌图、无图时 200dpi 渲染（网页版 render_pages 取首图/150dpi，印刷版要更清）
     imgs = page.get_images(full=True)
     if imgs:
         xref = max(imgs, key=lambda im: im[2] * im[3])[0]
