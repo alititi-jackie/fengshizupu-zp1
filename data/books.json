@@ -198,6 +198,26 @@
           "dl_mb": 23.5
         }
       ]
+    },
+    {
+      "slug": "zhuji-ziyan-feng",
+      "title": "浙江诸暨紫岩冯氏宗谱",
+      "province": "浙江",
+      "place": "诸暨紫岩",
+      "era": "民国十八年（1929）接修",
+      "editors": "冯仲达等纂修",
+      "source": "上海图书馆藏本 · 维基共享资源（公有领域）",
+      "keywords": "浙江 诸暨 暨阳 紫岩 冯氏宗谱 民国 彦儒堂 冯仲达",
+      "intro": "浙江诸暨紫岩冯氏宗谱，民国十八年（1929）己巳接修，冯仲达等纂修，彦儒堂本，全一册。诸暨旧称暨阳，此谱为紫岩冯氏的接修本，世系记至民国十一年（1922）前后出生者。本站收录上海图书馆藏本影印，逐页在线连读。",
+      "volumes": [
+        {
+          "id": "vol1",
+          "name": "全一册",
+          "pages": 748,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Shanghai_%E6%9A%A8%E9%99%BD%E7%B4%AB%E5%B2%A9%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C.pdf",
+          "dl_mb": 82.4
+        }
+      ]
     }
   ]
 }
