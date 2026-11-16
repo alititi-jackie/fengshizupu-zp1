@@ -1,4 +1,4 @@
-# zp1.fengshizupu.com — 各地冯氏旧谱收藏（第一站）
+# zp1.fengshizupu.com — 各地冯氏族谱收藏（第一站）
 
 收录各地图书馆藏本冯氏宗谱影印（公有领域），逐页在线连读。入口在主站
 fengshizupu.com「各地族谱」页（恩平谱、小湴村之后）。

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the zp1 static site (各地冯氏旧谱收藏) into ./site.
+"""Generate the zp1 static site (各地冯氏族谱收藏) into ./site.
 
 Chrome (header/nav/footer) mirrors fengshizupu.com; styles come from the
 shared assets/genealogy-theme.css (source of truth: main site repo
@@ -121,8 +121,8 @@ def index_page(books):
     sections = f'<div class="book-cards">\n{cards}</div>\n'
     total_books = len(books)
     total_pages = sum(book_total_pages(b) for b in books)
-    return head("各地冯氏旧谱收藏 · 冯氏族谱",
-                "各地冯氏旧谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。",
+    return head("各地冯氏族谱收藏 · 冯氏族谱",
+                "各地冯氏族谱收藏：收录图书馆藏本冯氏宗谱影印，逐页在线连读。",
                 '<link rel="stylesheet" href="/assets/main-home.css?v=20261116">\n') + header("home") + f"""<main>
 <section class="hero"><p class="eyebrow">全国冯氏宗亲 · 数字族谱档案</p>
 <h1>寻根有据，世系有源。</h1>
@@ -148,7 +148,7 @@ def book_page(b):
                  f'<span class="pg">{v["pages"]} 页 · 打开阅读 ›</span></a>\n')
     desc = f'{b["title"]}：{b["era"]}，{b["editors"]}。{b["source"]}，全 {len(b["volumes"])} 册 {book_total_pages(b)} 页，在线连读。'
     return head(f'{b["title"]} · 冯氏族谱', desc, path=f'/book/{b["slug"]}.html') + header() + f"""<main>
-<p class="crumb"><a href="/">旧谱收藏</a> / {b["province"]} · {b["place"]}</p>
+<p class="crumb"><a href="/">族谱收藏</a> / {b["province"]} · {b["place"]}</p>
 <h1>{b["title"]}</h1>
 <div class="kv">
 <p><strong>纂修年代：</strong>{b["era"]}</p>
