@@ -29,10 +29,11 @@ def page_image(doc, page):
     imgs = page.get_images(full=True)
     if imgs:
         xref = max(imgs, key=lambda im: im[2] * im[3])[0]
-        pix = fitz.Pixmap(doc, xref)
-        if pix.n > 3:
-            pix = fitz.Pixmap(fitz.csRGB, pix)
-        return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        try:
+            d = doc.extract_image(xref)
+            return Image.open(io.BytesIO(d["image"])).convert("RGB")
+        except Exception:
+            pass
     pix = page.get_pixmap(dpi=200)
     return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
 

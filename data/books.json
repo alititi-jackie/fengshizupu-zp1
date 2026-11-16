@@ -157,6 +157,47 @@
           "dl_mb": 23.1
         }
       ]
+    },
+    {
+      "slug": "daohou-feng-shipu",
+      "title": "山西代县道后冯氏世谱",
+      "province": "山西",
+      "place": "代县道后",
+      "era": "清冯廷正纂修（乾隆五十二年姚鼐序）",
+      "editors": "冯廷正纂修",
+      "source": "国家图书馆藏本 · 维基共享资源（公有领域）",
+      "keywords": "山西 代县 代州 道后 冯氏世谱 清代 乾隆 姚鼐 冯廷正",
+      "intro": "山西代县道后冯氏世谱，清冯廷正纂修，全书四册。卷首为姚鼐乾隆五十二年（1787）所作《代州道后冯氏世谱序》与〈世谱缘起〉：这一支冯氏明成化间由山东迁代州。本站另收的《代州冯氏族谱》（民国二十三年刊）正是这一支的后出族谱，两谱可对照读。本站收录国家图书馆藏本影印，逐页在线连读。",
+      "volumes": [
+        {
+          "id": "vol1",
+          "name": "第一册",
+          "pages": 57,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/NLC512-023041105010072-3815_%E5%B1%B1%E8%A5%BF%E4%BB%A3%E7%B8%A3%E9%81%93%E5%BE%8C%E9%A6%AE%E6%B0%8F%E4%B8%96%E8%AD%9C_%E7%AC%AC1%E5%86%8A.pdf",
+          "dl_mb": 8.4
+        },
+        {
+          "id": "vol2",
+          "name": "第二册",
+          "pages": 130,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/NLC512-023041105010072-3816_%E5%B1%B1%E8%A5%BF%E4%BB%A3%E7%B8%A3%E9%81%93%E5%BE%8C%E9%A6%AE%E6%B0%8F%E4%B8%96%E8%AD%9C_%E7%AC%AC2%E5%86%8A.pdf",
+          "dl_mb": 31.2
+        },
+        {
+          "id": "vol3",
+          "name": "第三册",
+          "pages": 122,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/NLC512-023041105010072-3817_%E5%B1%B1%E8%A5%BF%E4%BB%A3%E7%B8%A3%E9%81%93%E5%BE%8C%E9%A6%AE%E6%B0%8F%E4%B8%96%E8%AD%9C_%E7%AC%AC3%E5%86%8A.pdf",
+          "dl_mb": 29.1
+        },
+        {
+          "id": "vol4",
+          "name": "第四册",
+          "pages": 144,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/NLC512-023041105010072-3818_%E5%B1%B1%E8%A5%BF%E4%BB%A3%E7%B8%A3%E9%81%93%E5%BE%8C%E9%A6%AE%E6%B0%8F%E4%B8%96%E8%AD%9C_%E7%AC%AC4%E5%86%8A.pdf",
+          "dl_mb": 23.5
+        }
+      ]
     }
   ]
 }
