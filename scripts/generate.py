@@ -66,7 +66,7 @@ def head(title, desc, extra_css="", path="/"):
 def header(active="archives"):
     on_home = ' class="on" aria-current="page"' if active == "home" else ""
     on_arch = ' class="on" aria-current="page"' if active == "archives" else ""
-    return f"""<header class="site-header"><a class="brand" href="/"><img src="/icon.svg" alt="" width="46" height="46"><span>冯氏族谱<small>zp1.fengshizupu.com</small></span></a></header>
+    return f"""<header class="site-header"><a class="brand" href="/"><img src="/icon.svg" alt="" width="46" height="46"><span>冯氏族谱<small>fengshizupu.com</small></span></a></header>
 <nav class="mainnav" aria-label="主导航"><div class="mainnav-in"><a href="{MAIN}/"{on_home}>首页</a><a href="{MAIN}/news/">资讯</a><a href="{MAIN}/archives/"{on_arch}>族谱</a><a href="{MAIN}/about/">关于</a><span class="share-wrap"><button type="button" class="share-text" onclick="sharePage()">分享</button></span></div></nav>
 """
 
