@@ -35,7 +35,8 @@ function buildScroll(center){
 function barOffset(){
   const nav = document.querySelector('.mainnav');
   const bar = document.querySelector('.readerbar');
-  return (nav ? nav.offsetHeight : 48) + (bar ? bar.offsetHeight : 50) + 6;
+  const dl = document.querySelector('.dlrow');
+  return (nav ? nav.offsetHeight : 48) + (bar ? bar.offsetHeight : 50) + (dl ? dl.offsetHeight : 0) + 6;
 }
 let holdUntil = 0;
 function scrollToPage(n, smooth){

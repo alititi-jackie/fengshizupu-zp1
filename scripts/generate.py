@@ -169,8 +169,8 @@ def book_page(b):
 def dl_strip(b, v):
     if not v.get("dl_mb"):
         return ""
-    return (f'<p class="dlstrip"><a class="btn" href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
-            f'下载本册 PDF · {v["dl_mb"]} MB</a></p>\n')
+    return (f'<div class="dlrow"><a href="{DL_BASE}/{b["slug"]}-{v["id"]}-dl.pdf">'
+            f'下载本册 PDF · {v["dl_mb"]} MB</a></div>\n')
 
 
 def reader_page(b, v):
