@@ -6,7 +6,7 @@ fengshizupu.com「各地族谱」页（恩平谱、小湴村之后）。
 ## 架构
 - 静态站，GitHub Pages + GitHub Actions 部署，自定义域名 zp1.fengshizupu.com（site/CNAME 由生成器输出）。
 - 书目数据：`data/books.json`（书名、地区、年代、纂辑者、来源、各册页数与公有领域源文件 URL）。
-- 构建流程（Actions）：按 books.json 下载源 PDF → `scripts/render_pages.py` 拆页、压页眉、转 WebP → `scripts/generate.py` 生成页面 → 部署。
+- 构建流程（Actions）：从本站 Release `b-20261116` 下载源 PDF → `scripts/render_pages.py` 拆页、压页眉、转 WebP → `scripts/generate.py` 生成页面 → 部署。新书入库时把 PDF 加入该 Release（books.json 的 url 字段只作来源记录）。
 - 每册源 PDF 约 30MB，不入库；本地备份在维护机 ~/workspace/fengshizupu-work/。
 - 本站容量约 900MB 封顶，装满后开 zp2（新仓库+子域名，同一套代码）。
 
