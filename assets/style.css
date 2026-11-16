@@ -218,6 +218,4 @@ body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 
 
 
 /* --- 阅读页顶部：本册 PDF 下载 --- */
-.dlstrip{margin:10px 0 0;text-align:center;font-size:14px}
-.dlstrip a{color:var(--red);font-weight:600;text-decoration:none}
-.dlstrip a:hover{text-decoration:underline}
+.dlstrip{margin:12px 0 0;text-align:center}
