@@ -54,6 +54,68 @@
           "dl_mb": 37.1
         }
       ]
+    },
+    {
+      "slug": "shunde-daliang-zhuyuan-feng",
+      "title": "广东顺德大良竹园冯氏族谱",
+      "province": "广东",
+      "place": "顺德大良竹园",
+      "era": "清道光十二年（1832）修",
+      "editors": "冯氏合族纂修",
+      "source": "上海图书馆藏本 · 维基共享资源（公有领域）",
+      "keywords": "广东 顺德 大良 竹园 冯氏族谱 清代 道光 桂洲 南门 栅口 东陂 龙门巷",
+      "intro": "顺德大良竹园冯氏合族总谱，全书十卷，清道光十二年（1832）修，卷首初修序撰于康熙二十三年。卷一为序例与大宗图，卷二至卷七分述桂洲、竹园、南门、栅口、东陂、龙门巷六房世系，后卷收传、誌、碑铭。本站收录上海图书馆藏清刊本影印，逐页在线连读。",
+      "volumes": [
+        {
+          "id": "vol1",
+          "name": "卷一（序例 · 大宗图）",
+          "pages": 39,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 2.7
+        },
+        {
+          "id": "vol2",
+          "name": "卷二（桂洲房）",
+          "pages": 29,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 1.7
+        },
+        {
+          "id": "vol3",
+          "name": "卷三（竹园房）",
+          "pages": 338,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 20.4
+        },
+        {
+          "id": "vol4",
+          "name": "卷四（南门房）",
+          "pages": 39,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 2.3
+        },
+        {
+          "id": "vol5",
+          "name": "卷五（栅口房）",
+          "pages": 86,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 5.3
+        },
+        {
+          "id": "vol6",
+          "name": "卷六（东陂房）",
+          "pages": 116,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 7.5
+        },
+        {
+          "id": "vol7",
+          "name": "卷七至卷十（龙门巷房 · 传誌碑铭）",
+          "pages": 204,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shanghai_%E9%A0%86%E5%BE%B7%E5%A4%A7%E8%89%AF%E7%AB%B9%E5%9C%92%E9%A6%AE%E6%B0%8F%E6%97%8F%E8%AD%9C.pdf",
+          "dl_mb": 15.3
+        }
+      ]
     }
   ]
 }
