@@ -144,6 +144,7 @@ def book_page(b):
         rows += (f'<a href="/read/{b["slug"]}-{v["id"]}.html"><span>{v["name"]}</span>'
                  f'<span class="pg">{v["pages"]} 页 · 打开阅读 ›</span></a>\n')
     desc = f'{b["title"]}：{b["era"]}，{b["editors"]}。{b["source"]}，全 {len(b["volumes"])} 册 {book_total_pages(b)} 页，在线连读。'
+    alink = f'<p>本谱介绍：<a href="{b["article"]}">{b["article_title"]}</a></p>\n' if b.get("article") else ""
     return head(f'{b["title"]} · 冯氏族谱', desc, path=f'/book/{b["slug"]}.html') + header() + f"""<main>
 <p class="crumb"><a href="/">族谱收藏</a> / {b["province"]} · {b["place"]}</p>
 <h1>{b["title"]}</h1>
@@ -154,7 +155,7 @@ def book_page(b):
 <p><strong>全书规模：</strong>{len(b["volumes"])} 册，共 {book_total_pages(b)} 页</p>
 </div>
 <p>{b["intro"]}</p>
-<section class="block"><h2>各册阅读</h2>
+{alink}<section class="block"><h2>各册阅读</h2>
 <div class="list">
 {rows}</div></section>
 <p class="note">阅读说明：点开任意一册即从第一页连续向下阅读，可跳页、可点图放大；每册阅读页顶部可下载 PDF 版。</p>
